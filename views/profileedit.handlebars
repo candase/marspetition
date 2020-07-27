@@ -1,0 +1,33 @@
+<img id="profileBackground">
+<div class="profile">
+    <nav class="profile">
+        <div class="nav">
+            <a class = "nav" href="./petition">petition |</a> 
+            <a class = "nav" href="./signers">signers |</a>
+            <a class = "nav" href="./logout">logout</a>
+        </div>
+    </nav>
+    <h3 id="profile">Update your profile!</h3>
+    <p id="profile">You can update your profile here ana it might help you to join the future Mars Mission!</p>
+    {{#if error}}
+    <p>ooops! Something went wrong! <a href="./profileedit">Please try again!</a></p>
+    {{/if}}
+    
+    {{#userProfile}}
+    {{#if updated}}
+    <p id="profile">Profile updated succesfully!</p>
+    {{/if}}
+    <form method="post">
+        <input type="text" name="first" id="first" placeholder="First Name // please fill" value="{{first}}">
+        <input type="text" name="last" id="last" placeholder="Last Name // please fill" value="{{last}}">
+        <input type="email" name="email" id="email" placeholder="email // please fill" value="{{email}}">
+        <input type="password" name="password" id="password" placeholder="password">
+        <input type="number" name="age" id="age" placeholder="Age" style="width: 100px" value="{{age}}">
+        <input type="text" name="city" id="city" placeholder="City" value="{{city}}">
+        <input type="text" name="profession" id="profession" placeholder="Profession" value="{{profession}}">
+        <input type="url" name="userUrl" id="userUrl" placeholder="https://example.com" value="{{url}}">
+        <input type="submit" value="Update!">
+    {{/userProfile}}
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    </form>
+</div>

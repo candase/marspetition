@@ -1,0 +1,26 @@
+<img id="signersBackground">
+<div class="signers">
+    <nav class="signers">
+        <div class="nav">
+            <a class = "nav" href="./profileedit">profile |</a>
+            <a class = "nav" href="./petition">petition |</a>
+            <a class = "nav" href="./logout">logout</a>
+        </div>
+    </nav>
+    <p>flight list ({{crewNumber}} people):</p>
+    {{#if error}}
+        <p>Something went wrong, plase try again.</p>
+    {{/if}}
+    <ul>
+    {{#signersList}}
+        <li> 
+            {{#if url}}<a href="{{url}}">{{first}} {{last}}</a> {{else}} {{first}} {{last}} {{/if}}
+            || 
+            {{#if age}} {{age}} |{{/if}}  
+            {{#if profession}}{{profession}} |{{/if}}
+            {{#if city}} <a href="./signers:{{city}}">{{city}}</a> {{/if}}
+        </li>
+        
+    {{/signersList}}
+</ul>
+</div>

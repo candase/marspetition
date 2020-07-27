@@ -1,0 +1,31 @@
+<img id="petitionBackground">
+<div class= 'container'>
+    <nav class="petition">
+        <div class="nav">
+            <a class = "nav" href="./profileedit">profile |</a>
+            <a class = "nav" href="./signers">signers |</a>
+            <a class = "nav" href="./logout">logout</a>
+        </div>
+    </nav>
+    <div class="petition_text">
+        <h3 id="petition">We Want to Go to MARS!!!</h3>
+        <p>We want to have opportunity!</p>
+        <p>We want to explore!</p>
+        <p>We want to create an utopian community!</p>
+        <p>Sign our petition to make applications for MARS missions open to everyone!</p>
+    </div>
+    {{#if error}}
+        <div class="error">Something went wrong, plase sign again.</div>
+    {{/if}}
+    <p id="signHere">Sign Here!</p>
+    <form method = 'POST'> 
+        <input id="sign" type="hidden" name='signature'>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        
+        <div class='canvasDiv'><canvas width="300px" height="100px"></canvas><button id="clearSign" type="button">Clear Signature!</button></div>
+        
+        <input type="submit" value="Submit">
+    </form>
+    
+</div>
+<script src="./canvas.js"></script>

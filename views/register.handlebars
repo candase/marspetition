@@ -1,0 +1,22 @@
+<img id="registerBackground">
+<div class="register">
+    <nav class="register">
+        <div class="nav">
+            <a class = "nav" href="./login">login</a>
+        </div>
+    </nav>
+    <h3>Do you want to go to MARS?</h3>
+    <p>Sign up or login to support our cause!</p>
+    {{#if error}}
+        <p>ooops! Something went wrong! Please be sure you have not signed up before and fill all the fields!</p>
+    {{/if}}
+    <form method="post">
+        <input type="text" name="firstname" id="firstname" placeholder="First Name">
+        <input type="text" name="lastname" id="lastname" placeholder="Last Name">
+        <input type="email" name="email" id="email" placeholder="email">
+        <input type="password" name="password" id="password" placeholder="Password">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <input type="submit" value="Sign up!">
+    </form>
+    <a class = 'login'href="./login">Signed up before? Login here!</a>
+</div>

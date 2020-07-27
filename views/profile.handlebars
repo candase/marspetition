@@ -1,0 +1,25 @@
+<img id="profileBackground">
+<div class="profile">
+    <nav class="profile">
+        <div class="nav">
+            <a class = "nav" href="./petition">petition |</a> 
+            <a class = "nav" href="./signers">signers |</a>
+            <a class = "nav" href="./logout">logout</a>
+        </div>
+        
+
+    </nav>
+    <h3 id="profile">Give us more details about yourself!</h3>
+    <p id="profile">It might help you to join the future Mars Mission!</p>
+    {{#if error}}
+    <p>ooops! Something went wrong! Please try again!</p>
+    {{/if}}
+    <form method="post">
+        <input type="number" name="age" id="age" placeholder="Age" style="width: 145px">
+        <input type="text" name="city" id="city" placeholder="City">
+        <input type="text" name="profession" id="profession" placeholder="Profession">
+        <input type="url" name="userUrl" id="userUrl" placeholder="Homepage url">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <input type="submit" value="Submit!">
+    </form>
+</div>

@@ -1,0 +1,25 @@
+<img id="thanksBackground">
+<div class='thanks'>
+    <nav class="thanks">
+        <div class="nav">
+            <a class = "nav" href="./profileedit">profile |</a>
+            <a class = "nav" href="./signers">signers |</a>
+            <a class = "nav" href="./logout">logout</a>
+        </div>
+    </nav>
+
+    <p>Thank you for supporting our cause!</p>
+    <p>Here's your amazing signature:</p>
+    {{#signature}}
+    <img src="{{.}}" id="thanksSign">
+    {{/signature}}
+    {{#if error}}
+    <p>ooops! Something went wrong!</p>
+    {{/if}}
+    <p id='revoke' >If you want to, you can revoke your signature and lose your chance to go to Mars :(</p>
+    <form method="post">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <input type="submit" value="Revoke your signature">
+    </form>
+    <a id="signatureListLink"href="./signers">See who's going to MARS{{#if crewNumber}} ({{crewNumber}} people){{/if}}!!!!!</a>
+    </div>
